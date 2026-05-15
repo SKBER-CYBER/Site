@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Services - Oggy Site</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="premium-service-header">
+        <div class="header-left">
+            <button onclick="history.back()" class="glass-back-btn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <h1 class="premium-title">OGGY PREMIUM SERVICES</h1>
+        </div>
+        <div class="header-right">
+            <div class="premium-user-avatar">
+                <span class="status-dot"></span>
+                <span class="user-initial" id="displayUID">ID</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="news-ticker">
+            <marquee behavior="scroll" direction="left">✅ নিশ্চয়তা: আমাদের এখানে ১০০% সফলতার সাথে আইডি রিকভারি করা হয়। কাজ না হলে টাকা ফেরত!  ⚡ দ্রুত সার্ভিস, ১০০% গোপনীয়তা এবং সাশ্রয়ী মূল্য—আপনার আইডির সুরক্ষা আমাদের দায়িত্ব।</marquee>
+        </div>
+
+        <div class="offer-timer-card">
+            <p><i class="fas fa-bolt"></i> স্পেশাল ডিসকাউন্ট অফার শেষ হতে বাকি:</p>
+            <div id="countdown-timer">02:59:59</div>
+        </div>
+
+        <div class="tracking-box">
+            <h3 class="mini-title"><i class="fas fa-search-location"></i> অর্ডার ট্র্যাক করুন</h3>
+            <div class="track-input-group">
+                <input type="text" id="trackID" placeholder="অর্ডার আইডি দিন (Ex: #786)">
+                <button onclick="trackOrder()"><i class="fas fa-search"></i></button>
+            </div>
+            <div id="trackResult" class="track-result-area"></div>
+        </div>
+
+        <div class="live-status-bar">
+            <div class="pulse-icon"></div>
+            <span>৫ জন বিশেষজ্ঞ বর্তমানে অনলাইনে আছেন</span>
+        </div>
+
+        <div class="success-counter">
+            <div class="stat"><h2 class="stat-num">29+</h2><p>আইডি রিকভারি</p></div>
+            <div class="stat"><h2 class="stat-num">100%</h2><p>সিকিউরড</p></div>
+            <div class="stat"><h2 class="stat-num">57+</h2><p>স্ক্রিপ্ট সেল</p></div>
+        </div>
+
+        <div class="premium-grid">
+            <div class="p-card" onclick="selectService(this, 'FB Blue Badge', '1000')">
+                <div class="p-icon"><i class="fas fa-check-circle" style="color: #1877f2;"></i></div>
+                <h4>FB BLUE BADGE</h4>
+                <p>আইডির ওপর নির্ভর করবে</p>
+                <span class="p-price">৳ 1000</span>
+            </div>
+
+            <div class="p-card" onclick="selectService(this, 'ID Recovery', '1500')">
+                <div class="p-icon"><i class="fas fa-user-shield"></i></div>
+                <h4>ID RECOVERY</h4>
+                <p>হ্যাক হওয়া আইডি রিকভারি</p>
+                <span class="p-price">৳ 1500</span>
+            </div>
+
+            <div class="p-card" onclick="selectService(this, 'FB Unlock', '450')">
+                <div class="p-icon"><i class="fab fa-facebook-messenger"></i></div>
+                <h4>FB UNLOCK</h4>
+                <p>লক আইডি ঠিক করুন</p>
+                <span class="p-price">৳ 450</span>
+            </div>
+
+            <div class="p-card" onclick="selectService(this, 'Python Support', '2500')">
+                <div class="p-icon"><i class="fab fa-python" style="color: #3776ab;"></i></div>
+                <h4>PYTHON HELP</h4>
+                <p>স্ক্রিপ্ট ও অটোমেশন সার্ভিস</p>
+                <span class="p-price">৳ 2500</span>
+            </div>
+
+            <div class="p-card" onclick="selectService(this, 'ID Take Down', '550')">
+                 <div class="p-icon"><i class="fas fa-user-slash" style="color: #ff4757;"></i></div>
+                 <h4>ID TAKE DOWN</h4>
+                 <p>নষ্ট বা ফেক আইডি রিমুভ</p>
+                 <span class="p-price">৳ 550</span>
+            </div>
+
+            <div class="p-card" onclick="selectService(this, '2FA Unlock', '350')">
+                <div class="p-icon"><i class="fas fa-key" style="color: #ffd700;"></i></div>
+                <h4>2FA UNLOCK</h4>
+                <p>টু-ফ্যাক্টর কোড বাইপাস</p>
+                <span class="p-price">৳ 350</span>
+            </div>
+
+            <div class="p-card" onclick="selectService(this, 'YouTube Help', '1000')">
+                <div class="p-icon"><i class="fab fa-youtube" style="color: #ff0000;"></i></div>
+                <h4>YT SUPPORT</h4>
+                <p>চ্যানেল রিকভারি ও হেল্প</p>
+                <span class="p-price">৳ 1000</span>
+            </div>
+
+            <div class="p-card" onclick="selectService(this, 'Full Secure', '950')">
+                <div class="p-icon"><i class="fas fa-shield-alt"></i></div>
+                <h4>FULL SECURE</h4>
+                <p>আইডি ফুল প্রোটেকশন</p>
+                <span class="p-price">৳ 950</span>
+            </div>
+        </div>
+
+        <div class="order-input-area">
+            <label><i class="fas fa-fingerprint"></i> আইডি বা কন্টাক্ট নাম্বার দিন</label>
+            <input type="text" id="userInput" placeholder="Ex: 017XXXXXXXX / UID">
+            <button class="gold-order-btn" onclick="sendToWhatsApp()">
+                <i class="fab fa-whatsapp"></i> সরাসরি অর্ডার করুন
+            </button>
+            <span class="security-note"><i class="fas fa-user-lock"></i> ১০০% নিরাপদ এবং গোপনীয়তা নিশ্চিত</span>
+        </div>
+
+        <div class="support-buttons-grid">
+            <a href="tel:+8801917466867" class="support-btn call-btn"><i class="fas fa-phone-alt"></i> সরাসরি কল করুন</a>
+            <a href="https://t.me/oggyworld8103" class="support-btn telegram-btn" target="_blank"><i class="fab fa-telegram-plane"></i> টেলিগ্রাম সাপোর্ট</a>
+        </div>
+
+        <div class="faq-container">
+            <h3 class="mini-title">সাধারণ কিছু প্রশ্ন (FAQ)</h3>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>কাজ শেষ হতে কতক্ষণ লাগে?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">সাধারণত 90-120 মিনিটের মধ্যেই কাজ কমপ্লিট হয়ে যায়।</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>পেমেন্ট মেথড কী কী আছে?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">আপনি বিকাশ এবং নগদের মাধ্যমে পেমেন্ট করতে পারবেন।</div>
+            </div>
+        </div>
+
+        <div class="payment-copy-area">
+            <p class="mini-title">আমাদের পেমেন্ট নম্বর (বিকাশ):</p>
+            <div class="copy-box">
+                <span id="p-num">+8801917466867</span>
+                <button onclick="copyNumber()"><i class="fas fa-copy"></i> COPY</button>
+            </div>
+        </div>
+
+        <div class="how-it-works">
+            <h3 class="mini-title">কিভাবে সার্ভিস নিবেন?</h3>
+            <div class="steps-grid">
+                <div class="step"><div class="step-num">১</div><p>সার্ভিস বাছুন</p></div>
+                <div class="step"><div class="step-num">২</div><p>অর্ডার দিন</p></div>
+                <div class="step"><div class="step-num">৩</div><p>কাজ বুঝে নিন</p></div>
+            </div>
+        </div>
+
+        <div class="review-section">
+            <h3 class="section-title">কাস্টমার ফিডব্যাক</h3>
+            <div class="review-grid">
+                <div class="review-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"খুবই দ্রুত কাজ করে দিয়েছে। ওস্তাদ আপনি সেরা!"</p>
+                    <span>- আরিয়ান আহমেদ</span>
+                </div>
+                <div class="review-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"বিশ্বাসযোগ্য সাইট। পেমেন্টের ১০ মিনিটে কাজ শেষ।"</p>
+                    <span>- রায়হান চৌধুরী</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/+8801917466867" class="floating-wa" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        let selectedItem = "";
+        let price = "";
+
+        // ইউনিক ইউজার আইডি (UID) ম্যানেজমেন্ট - যা সাইট স্লো করবে না
+        let customerUID = localStorage.getItem('oggy_uid');
+        if (!customerUID) {
+            customerUID = 'UID-' + Math.floor(Math.random() * 900000 + 100000);
+            localStorage.setItem('oggy_uid', customerUID);
+        }
+        
+        // হেডার এ আইডি দেখানো (মাউস ধরলে দেখা যাবে)
+        document.getElementById('displayUID').title = "Your ID: " + customerUID;
+
+        function selectService(element, name, amt) {
+            let cards = document.querySelectorAll('.p-card');
+            cards.forEach(c => c.classList.remove('active-card'));
+            element.classList.add('active-card');
+            selectedItem = name;
+            price = amt;
+        }
+
+        function copyNumber() {
+            let num = document.getElementById("p-num").innerText;
+            navigator.clipboard.writeText(num);
+            alert("নম্বরটি কপি করা হয়েছে: " + num);
+        }
+
+        function trackOrder() {
+            let id = document.getElementById('trackID').value;
+            let resultArea = document.getElementById('trackResult');
+            if(id === "") {
+                alert("অর্ডার আইডি দিন!");
+                return;
+            }
+            resultArea.style.display = "block";
+            resultArea.innerHTML = `<i class="fas fa-info-circle"></i> অর্ডার <b>${id}</b> বর্তমানে <b>Processing</b> এ আছে। আমাদের টিম কাজ করছে।`;
+        }
+
+        function toggleFAQ(element) {
+            let answer = element.nextElementSibling;
+            let icon = element.querySelector('i');
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
+                icon.style.transform = "rotate(0deg)";
+            } else {
+                answer.style.display = "block";
+                icon.style.transform = "rotate(180deg)";
+            }
+        }
+
+        // টাইমার কোড
+        let hours = 2, minutes = 59, seconds = 59;
+        const timerElement = document.getElementById('countdown-timer');
+        setInterval(() => {
+            if (seconds > 0) seconds--;
+            else {
+                if (minutes > 0) { minutes--; seconds = 59; }
+                else { if (hours > 0) { hours--; minutes = 59; seconds = 59; } }
+            }
+            timerElement.innerHTML = `${hours < 10 ? '0'+hours : hours}:${minutes < 10 ? '0'+minutes : minutes}:${seconds < 10 ? '0'+seconds : seconds}`;
+        }, 1000);
+
+        // হোয়াটসঅ্যাপে পাঠানোর মেইন ফাংশন (UID সহ)
+        function sendToWhatsApp() {
+            let inputVal = document.getElementById('userInput').value;
+            let waNumber = "8801917466867"; 
+
+            if(!selectedItem) { 
+                alert("আগে একটি সার্ভিস সিলেক্ট কর ওস্তাদ!"); 
+            } 
+            else if(!inputVal) { 
+                alert("আপনার আইডি বা নাম্বার দিন!"); 
+            } 
+            else {
+                // মেসেজে অটোমেটিক কাস্টমারের আলাদা UID চলে যাবে
+                let message = `*নতুন সার্ভিস অর্ডার!*%0A%0A*কাস্টমার UID:* ${customerUID}%0A*সার্ভিস:* ${selectedItem}%0A*চার্জ:* ${price}৳%0A*ইউজার আইডি:* ${inputVal}`;
+                window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
+            }
+        }
+    </script>
+</body>
+</html>
